@@ -1,0 +1,41 @@
+{
+  "name": "dashboard",
+  "version": "1.0.0",
+  "description": "Developer Job Search Productivity Board",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cross-env NODE_ENV=production npm run build && node server/server.js",
+    "build": "cross-env NODE_ENV=production webpack",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot & nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dragon-losers/dashboard.git"
+  },
+  "author": "Joshua Pagan, Alec Below, Kevin Luo, Zac Haluza",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dragon-losers/dashboard/issues"
+  },
+  "homepage": "https://github.com/dragon-losers/dashboard#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.5.3",
+    "nodemon": "^2.0.3",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "cross-env": "^7.0.2",
+    "express": "^4.17.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
