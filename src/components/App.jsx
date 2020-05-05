@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import Dashboard from "./Dashboard.jsx";
+import HackerNews from "../containers/HackerNews"
+import Reddit from "../containers/Reddit.jsx"
 
 class App extends Component {
   constructor(props) {
@@ -12,6 +14,7 @@ class App extends Component {
       <div>
         Dragon-Losers Forever!!
         <Dashboard />
+        <Reddit />
       </div>
     );
   }
