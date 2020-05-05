@@ -14,7 +14,6 @@ class App extends Component {
       <div>
         Dragon-Losers Forever!!
         <Dashboard />
-        <Reddit />
       </div>
     );
   }
