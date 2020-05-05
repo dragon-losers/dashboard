@@ -3,17 +3,32 @@ import Dashboard from './Dashboard.jsx';
 import Sidebar from './Sidebar.js';
 import HackerNews from '../containers/HackerNews.js';
 import DevTo from '../containers/DevTo.js';
+import { Paper, Grid } from '@material-ui/core';
 import { v4 as uuidv4 } from 'uuid';
 
 const App = (props) => {
   const [layout, setLayout] = useState([]);
 
   const handleNewHackernews = () => {
-    setLayout([...layout, <HackerNews key={uuidv4()} />]);
+    setLayout([
+      ...layout,
+      <Grid item xs={6} sm={3}>
+        <Paper>
+          <HackerNews key={uuidv4()} />
+        </Paper>
+      </Grid>,
+    ]);
   };
 
   const handleNewDev = () => {
-    setLayout([...layout, <DevTo key={uuidv4()} />]);
+    setLayout([
+      ...layout,
+      <Grid item xs={6} sm={3}>
+        <Paper>
+          <DevTo key={uuidv4()} />
+        </Paper>
+      </Grid>,
+    ]);
   };
 
   // const add
