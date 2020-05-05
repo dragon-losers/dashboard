@@ -1,5 +1,7 @@
 import React from "react";
 import { Paper, Grid, makeStyles } from "@material-ui/core";
+import DevTo from "../containers/DevTo";
+import HackerNews from "../containers/HackerNews";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -11,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
     height: "15em",
     backgroundColor: "aliceblue",
+    overflow: "auto",
   },
 }));
 
