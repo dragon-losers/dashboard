@@ -2,6 +2,7 @@ import React from "react";
 import { Paper, Grid, makeStyles } from "@material-ui/core";
 import DevTo from "../containers/DevTo";
 import HackerNews from "../containers/HackerNews";
+import Stonks from "./Stonks.jsx";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,13 +28,15 @@ export default function Dashboard() {
           <Paper className={classes.paper}>big un</Paper>
         </Grid>
         <Grid item xs={12} sm={6}>
-          <Paper className={classes.paper}>(these ones -- also big!)</Paper>
+          <Paper className={classes.paper}></Paper>
         </Grid>
         <Grid item xs={12} sm={6}>
           <Paper className={classes.paper}>(these ones -- also big!)</Paper>
         </Grid>
         <Grid item xs={6} sm={3}>
-          <Paper className={classes.paper}>our small citizens ...</Paper>
+          <Paper className={classes.paper}>
+            <Stonks />
+          </Paper>
         </Grid>
         <Grid item xs={6} sm={3}>
           <Paper className={classes.paper}>our small citizens ...</Paper>
