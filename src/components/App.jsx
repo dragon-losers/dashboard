@@ -3,16 +3,17 @@ import Dashboard from './Dashboard.jsx';
 import Sidebar from './Sidebar.js';
 import HackerNews from '../containers/HackerNews.js';
 import DevTo from '../containers/DevTo.js';
+import { v4 as uuidv4 } from 'uuid';
 
 const App = (props) => {
   const [layout, setLayout] = useState([]);
 
   const handleNewHackernews = () => {
-    setLayout([...layout, <HackerNews />]);
+    setLayout([...layout, <HackerNews key={uuidv4()} />]);
   };
 
   const handleNewDev = () => {
-    setLayout([...layout, <DevTo />]);
+    setLayout([...layout, <DevTo key={uuidv4()} />]);
   };
 
   // const add
@@ -23,7 +24,7 @@ const App = (props) => {
         handleNewHackernews={handleNewHackernews}
         handleNewDev={handleNewDev}
       />
-      <Dashboard hackernews={hackernews} dev={dev} />
+      <Dashboard layout={layout} />
     </div>
   );
 };
