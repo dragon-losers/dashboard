@@ -25,7 +25,7 @@ const DevTo = (props) => {
   ));
 
   return (
-    <div>
+    <div className="dev-to">
       <div>
         <label htmlFor="dev-to-select">Choose a tag</label>
 
