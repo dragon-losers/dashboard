@@ -32,7 +32,7 @@ const HackerNews = (props) => {
   ));
 
   return (
-    <div>
+    <div className="hackernews">
       <input
         placeholder="Start typing..."
         onChange={(e) => setQuery(e.target.value)}
