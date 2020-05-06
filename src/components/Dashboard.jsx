@@ -1,9 +1,6 @@
-import React from "react";
-import { Paper, Grid, makeStyles } from "@material-ui/core";
-import DevTo from "../containers/DevTo";
-import HackerNews from "../containers/HackerNews";
-import Stonks from "./Stonks.jsx";
-
+import React from 'react';
+import { Paper, Grid, makeStyles } from '@material-ui/core';
+import Stonks from './Stonks.jsx';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,9 +11,9 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
 
-    height: "15em",
-    backgroundColor: "aliceblue",
-    overflow: "auto",
+    height: '15rem',
+    backgroundColor: 'aliceblue',
+    overflow: 'scroll',
   },
 }));
 
