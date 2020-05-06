@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import Dashboard from "./Dashboard.jsx";
+import Github from "../containers/Github.jsx";
 
 class App extends Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class App extends Component {
       <div>
         Dragon-Losers Forever!!
         <Dashboard />
+        <Github />
       </div>
     );
   }
