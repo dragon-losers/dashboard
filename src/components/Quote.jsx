@@ -5,8 +5,7 @@ const Quote = (props) => {
   useEffect(() => {
     fetch("https://programming-quotes-api.herokuapp.com/quotes/random")
       .then((res) => res.json())
-      .then((res) => setResult(res))
-      .then(console.log(result));
+      .then((res) => setResult(res));
   }, []);
 
   return (
