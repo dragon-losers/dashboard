@@ -5,3 +5,33 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+.btn {
+  font-size: 1rem;
+  border: none;
+  padding: 0.5rem 0.25rem;
+  background-color: rgb(255, 115, 115);
+  margin: 0 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sidebar {
+  padding: 0.5rem;
+}
+
+.hackernews {
+  height: 20rem;
+  .results {
+    overflow: scroll;
+    max-height: 70%;
+  }
+}
+
+.dev-to {
+  height: 20rem;
+  .results {
+    overflow: scroll;
+    max-height: 70%;
+  }
+}
