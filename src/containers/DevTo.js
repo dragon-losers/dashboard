@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import DevToItem from '../components/HackerNewsItem';
+import DevToItem from '../components/DevToItem';
 
 const DevTo = (props) => {
   const [tag, setTag] = useState('');
@@ -20,13 +20,12 @@ const DevTo = (props) => {
       key={result.id}
       title={result.title}
       image={result.cover_image}
-      user={result.user}
       link={result.canonical_url}
     />
   ));
 
   return (
-    <div>
+    <div className="dev-to">
       <div>
         <label htmlFor="dev-to-select">Choose a tag</label>
 
@@ -48,7 +47,7 @@ const DevTo = (props) => {
           <option value="javascript">JavaScript</option>
           <option value="mongodb">MongoDB</option>
           <option value="node">Node</option>
-          <option value="performance">Ferformance</option>
+          <option value="performance">Performance</option>
           <option value="react">React</option>
           <option value="redux">Redux</option>
           <option value="sql">SQL</option>

@@ -4,11 +4,10 @@ const github_clientID = '9b11b584e44ee5e25886';
 const github_secret = '618ccc3582caa82567d9a2e24425e992101b2b8e';
 const GithubController = require('../controllers/GithubController.js');
 const fetch = require('node-fetch');
-const path = require('path');
 
 
 Github.get('/auth', (req, res) => {
-    const url = `https://github.com/login/oauth/authorize?client_id=${github_clientID}`;
+    const url = `https://github.com/login/oauth/authorize?client_id=${github_clientID}&scope=notifications`;
     res.redirect(url);
 })
 
@@ -19,13 +18,19 @@ Github.get('/redirect', (req, res) => {
         .then((raw) => raw.json())
         .then((data) => {
             res.cookie('access_token', data.access_token);
-            //res.status(200).sendFile(path.resolve(__dirname, '../../index.html'));
             res.redirect('/');
         })
 })
 
 Github.get('/get_token', (req, res) => {
     res.json(req.cookies.access_token !== undefined);
+})
+
+Github.get('/notifications', (req, res) => {
+    fetch('http://api.github.com/notifications', { headers: { Accept: 'application/json', Authorization: `token ${req.cookies.access_token}` } })
+        .then(raw => raw.json())
+        .then(data => res.json(data))
+        .catch(err => console.log(err))
 })
 
 module.exports = Github;

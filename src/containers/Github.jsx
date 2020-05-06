@@ -11,7 +11,7 @@ const Github = (props) => {
     });
 
     const login = () => {
-        const url = `https://github.com/login/oauth/authorize?client_id=${github_clientID}`;
+        const url = `https://github.com/login/oauth/authorize?client_id=${github_clientID}&scope=notifications`;
         window.location.assign(url);
     };
 
