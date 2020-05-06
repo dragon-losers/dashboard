@@ -5,8 +5,12 @@ const Sidebar = (props) => {
   return (
     <div className="sidebar">
       <ul>
-        <button onClick={() => handleNewHackernews()}>HackerNews</button>
-        <button onClick={() => handleNewDev()}>Dev.to</button>
+        <button className="btn" onClick={() => handleNewHackernews()}>
+          HackerNews
+        </button>
+        <button className="btn" onClick={() => handleNewDev()}>
+          Dev.to
+        </button>
       </ul>
     </div>
   );
