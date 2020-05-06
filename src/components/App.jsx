@@ -5,6 +5,7 @@ import HackerNews from '../containers/HackerNews.js';
 import DevTo from '../containers/DevTo.js';
 import { Paper, Grid } from '@material-ui/core';
 import { v4 as uuidv4 } from 'uuid';
+import '../sass/styles.scss';
 
 const App = (props) => {
   const [layout, setLayout] = useState([]);
