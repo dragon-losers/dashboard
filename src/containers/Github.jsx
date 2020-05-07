@@ -16,7 +16,7 @@ const Github = (props) => {
     };
 
     return (
-        <div className="Github">
+        <div className="github">
             {auth
                 ? <GithubFeed />
                 : <button onClick={() => login()}>Login to Github</button>

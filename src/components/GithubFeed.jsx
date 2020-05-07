@@ -10,15 +10,19 @@ const GithubFeed = (props) => {
             })
     });
 
+
     const notifications = feed.map((notif) => (
         <div>
-            <h3><a href={notif.subject.url}>{notif.subject.title}</a></h3>
-            <p>Type: {notif.subject.type}</p>
+            <h3><a href={notif.repository.html_url}>{notif.subject.title}</a></h3>
+            <p>
+                Type: {notif.subject.type} <br />
+                Repo: {notif.repository.full_name}
+            </p>
         </div>
     ))
 
     return (
-        <div>
+        <div className='feed'>
             {notifications}
         </div>
     );
