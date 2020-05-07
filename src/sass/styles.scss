@@ -66,8 +66,11 @@
   }
 }
 
-
 .calendar {
+  .date {
+    width: 50%;
+    margin: auto;
+  }
   .month {
     width: auto;
     border: 1px red solid;
@@ -80,6 +83,11 @@
   }
 }
 
+.login {
+  width: auto;
+  margin: auto;
+  padding: 1rem;
+}
 .notepad {
   resize: none;
   width: 100%;
