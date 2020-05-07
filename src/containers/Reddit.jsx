@@ -6,7 +6,7 @@ const Reddit = (props) => {
     const [subreddit, setSubreddit] = useState('');
 
     return (
-        <div className={"redditContainer"}>
+        <div className={"reddit"}>
             <input
                 placeholder={"Subreddit"}
                 onChange={(e) => setSearch(e.target.value)}
