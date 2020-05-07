@@ -17,9 +17,21 @@ const userSchema = new Schema({
     password: { type: String, required: true },
     widgets: { type: Array, required: true },
 });
-
 const User = mongoose.model('user', userSchema);
 
+const widgetSchema = new Schema({
+    cat: {
+        type: String,
+        required: true,
+    },
+    subCat: {
+        type: String,
+        required: false,
+    },
+});
+const Widget = mongoose.model('widget', widgetSchema);
+
 module.exports = {
-    User
+    User,
+    Widget,
 }
