@@ -1,4 +1,4 @@
-const { User } = require('../models/mongo');
+const { User } = require("../models/mongo");
 module.exports = {
   createUser: async (req, res, next) => {
       console.log('hit controller');
@@ -42,10 +42,10 @@ module.exports = {
         //   console.log(user)
           res.locals.user = user;
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
         return next(err);
-    });
+      });
     return next();
   },
   deleteUser: async (req, res, next) => {

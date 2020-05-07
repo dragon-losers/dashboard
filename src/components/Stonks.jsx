@@ -23,6 +23,7 @@ export default function Stonks() {
         title: "FANG Stock Prices",
         subtitle: "EOD April 30 - May 5",
         // },
+        legend: "bottom",
       }}
     />
   );
