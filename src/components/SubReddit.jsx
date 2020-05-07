@@ -31,7 +31,7 @@ const SubReddit = (props) => {
     ));
 
     return (
-        <div key={props.name}>
+        <div className={"subreddit"} key={props.name}>
             {postList}
         </div>
     )

@@ -58,6 +58,15 @@
   }
 }
 
+.reddit {
+  height: 20rem;
+  .subreddit {
+    overflow: scroll;
+    max-height: 70%;
+  }
+}
+
+
 .calendar {
   .month {
     width: auto;
