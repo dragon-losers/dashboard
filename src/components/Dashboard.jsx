@@ -1,5 +1,7 @@
-import React from "react";
-import { Paper, Grid, makeStyles } from "@material-ui/core";
+import React from 'react';
+import { Paper, Grid, makeStyles } from '@material-ui/core';
+import Stonks from './Stonks.jsx';
+import AppTracker from '../containers/AppTracker';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -7,27 +9,33 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(2),
-    textAlign: "center",
+    textAlign: 'center',
     color: theme.palette.text.secondary,
-    height: "15em",
-    backgroundColor: "aliceblue",
+
+    height: '20rem',
+    backgroundColor: 'aliceblue',
+    overflow: 'scroll',
   },
 }));
 
-export default function Dashboard() {
+const Dashboard = (props) => {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <Paper className={classes.paper}>big un</Paper>
+        <Grid item xs={12} sm={6}>
+          <Paper className={classes.paper}>
+            <AppTracker />{' '}
+          </Paper>
         </Grid>
         <Grid item xs={12} sm={6}>
           <Paper className={classes.paper}>(these ones -- also big!)</Paper>
         </Grid>
-        <Grid item xs={12} sm={6}>
-          <Paper className={classes.paper}>(these ones -- also big!)</Paper>
+        <Grid item xs={6} sm={3}>
+          <Paper className={classes.paper}>
+            <Stonks />
+          </Paper>
         </Grid>
         <Grid item xs={6} sm={3}>
           <Paper className={classes.paper}>our small citizens ...</Paper>
@@ -38,10 +46,9 @@ export default function Dashboard() {
         <Grid item xs={6} sm={3}>
           <Paper className={classes.paper}>our small citizens ...</Paper>
         </Grid>
-        <Grid item xs={6} sm={3}>
-          <Paper className={classes.paper}>our small citizens ...</Paper>
-        </Grid>
+        {props.layout}
       </Grid>
     </div>
   );
-}
+};
+export default Dashboard;
