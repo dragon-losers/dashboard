@@ -20,6 +20,20 @@
   padding: 0.5rem;
 }
 
+.app-tracker {
+  display: flex;
+  justify-content: space-evenly;
+
+  .column {
+    margin: 0 0.5rem;
+    background-color: rgb(253, 253, 253);
+    height: 18rem;
+    padding: 1rem;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: scroll;
+  }
+}
+
 .hackernews {
   height: 20rem;
   .results {
