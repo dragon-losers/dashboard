@@ -58,6 +58,14 @@
   }
 }
 
+.reddit {
+  height: 20rem;
+  .subreddit {
+    overflow: scroll;
+    max-height: 70%;
+  }
+}
+
 .calendar {
   .date {
     width: 50%;
@@ -79,7 +87,10 @@
   width: auto;
   margin: auto;
   padding: 1rem;
-  // input {
-  //   // margin: 2rem;
-  // }
+}
+.notepad {
+  resize: none;
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
 }

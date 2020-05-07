@@ -4,10 +4,19 @@ const app = express();
 const cookieParser = require('cookie-parser');
 const GithubRouter = require('./routers/GithubRouter.js');
 const PORT = process.env.PORT || 3000;
+const userController = require('./controllers/userController');
 app.use(cookieParser());
 app.use(express.json());
 
 app.use('/dist', express.static(path.resolve(__dirname, '../dist')));
+
+app.get('/user', userController.getUser, (req, res) => {
+  res.status(200).json(res.locals.user);
+})
+
+app.post('/user', userController.createUser, (req, res) => {
+    res.status(200).json(res.locals.user)
+})
 
 app.use('/github', GithubRouter);
 
