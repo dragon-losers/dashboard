@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Paper, Grid, makeStyles } from "@material-ui/core";
 import Stonks from "./Stonks.jsx";
 import AppTracker from "../containers/AppTracker";
@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Dashboard = (props) => {
+  const [user, setUser] = useState("");
   const classes = useStyles();
 
   return (
@@ -49,7 +50,7 @@ const Dashboard = (props) => {
         </Grid>
         <Grid item xs={6} sm={3}>
           <Paper className={classes.paper}>
-            <User />
+            <User layout={props.layout} user={user} setUser={setUser} />
           </Paper>
         </Grid>
         {props.layout}

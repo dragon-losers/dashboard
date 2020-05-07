@@ -2,26 +2,44 @@ import React, { useEffect, useState } from "react";
 import { Paper } from "@material-ui/core";
 
 const User = (props) => {
-  const [user, setUser] = useState("");
+  const [auth, setAuth] = useState(false);
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [error, setError] = useState("");
-  const submitCredentials = (e) => {};
+  const submitCredentials = (e) => {
+    fetch("/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username: username,
+        password: password,
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => setUser(res))
+      .then((res) => setAuth(true));
+  };
   const submitUser = (e) => {
     fetch("/user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: {
+      body: JSON.stringify({
         username: login,
         password: password,
         name: name,
-      },
-    });
+        layout: props.layout,
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => props.setUser(res))
+      .then((res) => setAuth(true));
   };
-  if (!user) {
+  if (!auth) {
     return (
       <div>
         <Paper className="login">
@@ -41,7 +59,7 @@ const User = (props) => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button type="submit" onClick={submitCredentials}>
+            <button type="button" onClick={submitCredentials}>
               Login
             </button>
             <br />
@@ -53,7 +71,7 @@ const User = (props) => {
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
-            <button type="submit" onClick={submitUser}>
+            <button type="button" onClick={submitUser}>
               Register
             </button>
           </form>
@@ -65,7 +83,7 @@ const User = (props) => {
       <div>
         <Paper className="userInfo">
           <h2>Hello,</h2>
-          <h1>{user.name}</h1>
+          <h1>{props.user.name}</h1>
         </Paper>
       </div>
     );
