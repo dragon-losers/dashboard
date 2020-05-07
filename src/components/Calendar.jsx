@@ -34,7 +34,7 @@ const Calendar = (props) => {
 
   return (
     <div className="calendar">
-      <Paper>
+      <Paper className="date">
         <div>
           <h2 className="month">{months[month]}</h2>
           <h1 className="day">{day}</h1>

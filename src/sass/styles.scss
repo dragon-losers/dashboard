@@ -59,6 +59,10 @@
 }
 
 .calendar {
+  .date {
+    width: 50%;
+    margin: auto;
+  }
   .month {
     width: auto;
     border: 1px red solid;
@@ -69,4 +73,13 @@
   .onThisDay {
     font-size: 75%;
   }
+}
+
+.login {
+  width: auto;
+  margin: auto;
+  padding: 1rem;
+  // input {
+  //   // margin: 2rem;
+  // }
 }

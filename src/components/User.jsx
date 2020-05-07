@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from "./react";
+import React, { useEffect, useState } from "react";
 import { Paper } from "@material-ui/core";
 
 const User = (props) => {
-  const [isAuth, setAuth] = useState(false);
+  // const [isAuth, setAuth] = useState(false);
+  const [user, setUser] = useState("");
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
   const submitCredentials = (e, value) => {};
 
-  if (isAuth === false) {
+  if (!user) {
     return (
       <div>
-        Log in to save your layout!
-        <Paper>
+        <Paper className="login">
+          Log in to save your layout!
           <form>
             <input
               type="text"
@@ -31,6 +32,15 @@ const User = (props) => {
               Login
             </button>
           </form>
+        </Paper>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <Paper className="userInfo">
+          <h2>Hello,</h2>
+          <h1>{user.username}</h1>
         </Paper>
       </div>
     );
