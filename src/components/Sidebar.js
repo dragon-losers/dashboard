@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Sidebar = (props) => {
-  const { handleNewHackernews, handleNewDev } = props;
+  const { handleNewHackernews, handleNewDev, handleGithub, handleReddit } = props;
   return (
     <div className="sidebar">
       <ul>
@@ -10,6 +10,12 @@ const Sidebar = (props) => {
         </button>
         <button className="btn" onClick={() => handleNewDev()}>
           Dev.to
+        </button>
+        <button className="btn" onClick={() => handleGithub()}>
+          Github
+        </button>
+        <button className="btn" onClick={() => handleReddit()}>
+          Reddit
         </button>
       </ul>
     </div>
