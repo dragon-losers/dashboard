@@ -1,6 +1,7 @@
 import React from 'react';
 import { Paper, Grid, makeStyles } from '@material-ui/core';
 import Stonks from './Stonks.jsx';
+import AppTracker from '../containers/AppTracker';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -11,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
 
-    height: '15rem',
+    height: '20rem',
     backgroundColor: 'aliceblue',
     overflow: 'scroll',
   },
@@ -24,7 +25,9 @@ const Dashboard = (props) => {
     <div className={classes.root}>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
-          <Paper className={classes.paper}></Paper>
+          <Paper className={classes.paper}>
+            <AppTracker />{' '}
+          </Paper>
         </Grid>
         <Grid item xs={12} sm={6}>
           <Paper className={classes.paper}>(these ones -- also big!)</Paper>
