@@ -3,6 +3,7 @@ import Dashboard from './Dashboard.jsx';
 import Sidebar from './Sidebar.js';
 import HackerNews from '../containers/HackerNews.js';
 import DevTo from '../containers/DevTo.js';
+import Github from '../containers/Github.jsx'
 import { Paper, Grid } from '@material-ui/core';
 import { v4 as uuidv4 } from 'uuid';
 import '../sass/styles.scss';
@@ -10,6 +11,16 @@ import '../sass/styles.scss';
 const App = (props) => {
   const [layout, setLayout] = useState([]);
 
+  const handleGithub = () => {
+    setLayout([
+      ...layout,
+      <Grid item xs={6} sm={3}>
+        <Paper>
+          <Github key={uuidv4()} />
+        </Paper>
+      </Grid>,
+    ])
+  }
   const handleNewHackernews = () => {
     setLayout([
       ...layout,
@@ -39,6 +50,7 @@ const App = (props) => {
       <Sidebar
         handleNewHackernews={handleNewHackernews}
         handleNewDev={handleNewDev}
+        handleGithub={handleGithub}
       />
       <Dashboard layout={layout} />
     </div>

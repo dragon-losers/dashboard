@@ -36,6 +36,14 @@
   }
 }
 
+.github {
+  height: 20rem;
+  .feed {
+    overflow: scroll;
+    max-height: 70%;
+  }
+}
+
 .calendar {
   .month {
     width: auto;
