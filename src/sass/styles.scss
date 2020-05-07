@@ -49,3 +49,24 @@
     max-height: 70%;
   }
 }
+
+.github {
+  height: 20rem;
+  .feed {
+    overflow: scroll;
+    max-height: 70%;
+  }
+}
+
+.calendar {
+  .month {
+    width: auto;
+    border: 1px red solid;
+    border-radius: 5%;
+    color: white;
+    background-color: red;
+  }
+  .onThisDay {
+    font-size: 75%;
+  }
+}
