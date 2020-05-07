@@ -4,7 +4,7 @@ const Col2 = (props) => {
   return (
     <div id={props.id}>
       <p>{props.text}</p>
-      <button onClick={() => props.delete(e.target.parentNode.id)}>
+      <button onClick={(e) => props.delete(e.target.parentNode.id)}>
         Delete
       </button>
       <button
