@@ -22,6 +22,10 @@ app.post('/user', userController.createUser, (req, res) => {
     res.status(200).json(res.locals.user);
 });
 
+app.delete('/user', userController.deleteUser, (req, res) => {
+    res.status(200).json(res.locals.user);
+});
+
 app.get('/widget', widgetController.getWidget, (req, res) => {
     res.status(200).json(res.locals.widget);
 });
